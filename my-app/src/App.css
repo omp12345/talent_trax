@@ -1,0 +1,33 @@
+
+.search {
+  position: absolute;
+  left:66%; /* Adjust the left percentage value as needed */
+  top: 1%;
+  margin-top: 36px;
+background-color: rgb(40, 40, 223);
+  margin-right: 600px;
+
+  height:46px ;
+  width: 40px;
+  border: none;
+}
+
+.om1{
+  margin: auto;
+  
+  display: block;
+  width: 500px;
+  margin-top: 44px;
+  height: 42px;
+  
+  border: 1px solid gray;
+  outline: none;
+  font-size: 20px; 
+}
+.homepage{
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-left: 550px;
+  margin-top: 60px;
+}
