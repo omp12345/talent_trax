@@ -39,3 +39,12 @@ This is a React+Redux application for searching planets.
         - Shape: [http://localhost:3000/planets?shape=ID](http://localhost:3000/planets?shape=ID)
         - Size: [http://localhost:3000/planets?size=ID](http://localhost:3000/planets?size=ID)
 
+3. **Shareable Links:**
+
+    - You can create shareable links with specific search parameters. For example:
+
+        - [Search by Text and Color](http://localhost:3000/planets?q=text&color=ID)
+        - [Search by Shape and Size](http://localhost:3000/planets?shape=ID&size=ID)
+
+    Copy and share these links to provide others with the same filtered search results.
+
