@@ -11,11 +11,13 @@ function PlanetData() {
   const [search, _] = useSearchParams();
   const location = useLocation();
   const dispatch = useDispatch();
+  const text = search.get("text");
   const obj = {
     params: {
       shape: search.getAll('shape'),
       size: search.getAll('size'),
       color: search.getAll('color'),
+      text: text,
     },
   };
 
@@ -31,16 +33,21 @@ function PlanetData() {
     dispatch(getsize());
   }, []);
 
-  const planetdata = useSelector((state) => state.planetReducer.planet);
-
   useEffect(() => {
     dispatch(getPlanet(obj));
-  }, [location]);
+  }, [location, text]);
+
+  const planetdata = useSelector((state) => state.planetReducer.planet);
+
+  // Filter the planets based on the text parameter
+  const filteredPlanetData = text
+    ? planetdata.filter((planet) => planet.name.toLowerCase().includes(text.toLowerCase()))
+    : planetdata;
 
   return (
     <div>
       <br />
-      {planetdata.map((planet) => (
+      {filteredPlanetData.map((planet) => (
         <PlanetCard key={planet.id} planet={planet} />
       ))}
     </div>

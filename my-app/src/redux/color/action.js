@@ -4,9 +4,9 @@ import axios from "axios";
 
 export const getcolor = (data) => (dispatch) => {
     dispatch({type:GET_PLANET_COLOR_REQUEST})
-    axios.get(`http://localhost:8080/colors`,data)
+    axios.get(`https://mock-api-x1tu.onrender.com/colors`,data)
     .then((res)=> {
-        console.log( "color" , res.data)
+        
       dispatch({type:GET_PLANET_COLOR,payload:res.data})
     })
     .catch((err)=> {

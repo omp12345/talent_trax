@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import styled from "styled-components";
+import { IoIosSearch } from "react-icons/io";
 
 const Sidebar = () => {
   const [search, setSearch] = useSearchParams();
@@ -8,10 +9,12 @@ const Sidebar = () => {
   const initialShapes = search.getAll("shape");
   const initialSizes = search.getAll("size");
   const initialColors = search.getAll("color");
+  const initialtext=search.get("text")
 
   const [shape, setShapes] = useState(initialShapes || []);
   const [size, setSizes] = useState(initialSizes || []);
   const [color, setColors] = useState(initialColors || []);
+  const[text,setText]=useState(initialtext||"")
 
   const handleChange = (category, value) => {
     let newCategory = [...category];
@@ -37,12 +40,23 @@ const Sidebar = () => {
     shape.length > 0 && (params.shape = shape);
     size.length > 0 && (params.size = size);
     color.length > 0 && (params.color = color);
+    text.length>0 &&(params.text=text)
 
     setSearch(params);
-  }, [shape, size, color]);
+  }, [shape, size, color,text]);
 
   return (
+   
     <DIV>
+      <div style={{display:"flex",marginTop:"-38px",width:"100%",height:"40px",marginLeft:"20px"}} >
+        <div ><input style={{height:"20px",outline:"none"}} placeholder="search....." value={text} className='om1' onChange={(e)=>setText(e.target.value)}  type='text'/></div>
+       <div style={{backgroundColor:"blue",height:"24.5px", display:"flex",justifyContent:"center",alignContent:"center",color:"white"}} className='search'><IoIosSearch   />
+       </div>
+       
+          
+      </div>
+     
+     
       <h3>Filter by Color</h3>
       <div>
         <input
@@ -118,13 +132,17 @@ const Sidebar = () => {
        <br />
       </div>
     </DIV>
+   
   );
 };
 
 const DIV = styled.div`
-  width: 15%;
+  
+  margin-left:25px
   
   
 `;
+
+
 
 export default Sidebar;

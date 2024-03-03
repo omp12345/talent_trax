@@ -3,7 +3,7 @@ import { GET_PLANET_SHAPES, GET_PLANET_SHAPES_ERROR, GET_PLANET_SHAPES_REQUEST }
 
 export const getshape = (data) => (dispatch) => {
     dispatch({type:GET_PLANET_SHAPES_REQUEST})
-    axios.get(`http://localhost:8080/shapes`,data)
+    axios.get(`https://mock-api-x1tu.onrender.com/shapes`,data)
     .then((res)=> {
         console.log(res.data)
       dispatch({type:GET_PLANET_SHAPES,payload:res.data})

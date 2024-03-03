@@ -1,28 +1,6 @@
 
-.search {
-  position: absolute;
-  left:66%; /* Adjust the left percentage value as needed */
-  top: 1%;
-  margin-top: 36px;
-background-color: rgb(40, 40, 223);
-  margin-right: 600px;
-
-  height:46px ;
-  width: 40px;
-  border: none;
-}
-
-.om1{
-  margin: auto;
-  
-  display: block;
-  width: 500px;
-  margin-top: 44px;
-  height: 42px;
-  
-  border: 1px solid gray;
-  outline: none;
-  font-size: 20px; 
+body{
+  background-image: url("https://images.unsplash.com/photo-1601662528567-526cd06f6582?q=80&w=1615&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 }
 .homepage{
   display: flex;
@@ -30,4 +8,10 @@ background-color: rgb(40, 40, 223);
   align-items: center;
   margin-left: 550px;
   margin-top: 60px;
+  width: 40%;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
+/* .om{
+  margin-left: 80px;
+} */
